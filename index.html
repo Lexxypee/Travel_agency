@@ -3,120 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmenTravel&Tour</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AmenTravel&Tour - Explore the World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background-color: rgba(249, 168, 38, 0.1);
+        }
+        
+        .contact-input:focus {
+            outline: none;
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+    </style>
 </head>
-<body>
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>Explore the World with AmenTravel&Tour</h1>
-            <p>Unforgettable trips, stress-free planning.</p>
-            <a href="#contact" class="cta-button">Plan Your Trip</a>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-blue-600">AmenTravel<span class="text-orange-400">&Tour</span></div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-orange-400">Home</a>
+                    <a href="#about" class="text-gray-800 hover:text-orange-400">About</a>
+                    <a href="#services" class="text-gray-800 hover:text-orange-400">Services</a>
+                    <a href="#faq" class="text-gray-800 hover:text-orange-400">FAQ</a>
+                    <a href="#contact" class="text-gray-800 hover:text-orange-400">Contact</a>
+                </div>
+                
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-orange-400">Home</a>
+                <a href="#about" class="block py-2 text-gray-800 hover:text-orange-400">About</a>
+                <a href="#services" class="block py-2 text-gray-800 hover:text-orange-400">Services</a>
+                <a href="#faq" class="block py-2 text-gray-800 hover:text-orange-400">FAQ</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-orange-400">Contact</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>
-                At AmenTravel&Tour, our mission is to provide you with the most memorable and stress-free travel experiences. We specialize in creating customized itineraries that cater to your unique interests and budget. What sets us apart is our commitment to personalized service, attention to detail, and a passion for discovering the world's hidden gems.
-            </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">Explore the World with <span class="text-orange-400">AmenTravel&Tour</span></h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Unforgettable trips, stress-free planning.</p>
+            <button class="bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                Plan Your Trip
+            </button>
         </div>
     </section>
 
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-cards">
-                <div class="card">
-                    <img src="images/safari.png" alt="Safari Adventures">
-                    <h3>Safari Adventures</h3>
-                </div>
-                <div class="card">
-                    <img src="images/family.png" alt="Family Holidays">
-                    <h3>Family Holidays</h3>
-                </div>
-                <div class="card">
-                    <img src="images/honeymoon.png" alt="Honeymoon Packages">
-                    <h3>Honeymoon Packages</h3>
-                </div>
-                <div class="card">
-                    <img src="images/visa.png" alt="Visa & Ticketing Support">
-                    <h3>Visa & Ticketing Support</h3>
-                </div>
-                <div class="card">
-                    <img src="images/group.png" alt="Custom Group Tours">
-                    <h3>Custom Group Tours</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <button class="faq-question">How do I book a trip?</button>
-                <div class="faq-answer">
-                    <p>You can book a trip by filling out the contact form on our website or by calling us directly. We will then get in touch with you to discuss your travel plans.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">What are the payment options?</button>
-                <div class="faq-answer">
-                    <p>We accept various payment methods including credit/debit cards, bank transfers, and online payment platforms. We will provide detailed payment information upon booking.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Can I make changes to my trip?</button>
-                <div class="faq-answer">
-                    <p>Yes, changes can be made to your trip itinerary. However, please note that changes may be subject to availability and additional costs. We recommend contacting us as early as possible to discuss any changes.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Do you help with trip planning?</button>
-                <div class="faq-answer">
-                    <p>Absolutely! We specialize in creating custom itineraries tailored to your interests and preferences. Our team will work with you to plan every detail of your trip.</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">About Us</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-blue-50 p-8 rounded-xl shadow-lg">
+                    <p class="text-gray-700 text-lg mb-6">
+                        At AmenTravel&Tour, we believe that travel should be about creating unforgettable memories, not worrying about logistics. Founded in 2010, our mission is to provide exceptional travel experiences tailored to your unique needs.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-6">
+                        What sets us apart is our personalized approach. We don't just book trips; we craft experiences. Our team of travel experts has visited every destination we offer, ensuring we can provide firsthand recommendations and insights.
+                    </p>
+                    <p class="text-gray-700 text-lg">
+                        From the moment you contact us until you return home, we're with you every step of the way, ensuring a seamless and stress-free journey.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="text" name="subject" placeholder="Subject" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="cta-button">Send Message</button>
-            </form>
-            <div class="contact-info">
-                <p>Email: info@amentravel.com</p>
-                <p>Phone: +123 456 7890</p>
-                <p>Address: 123 Travel Lane, Adventure City</p>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Top Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 ease-in-out">
+                    <div class="p-6">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-lion"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Safari Adventures</h3>
+                        <p class="text-gray-600">
+                            Experience the thrill of African safaris with expert guides. Witness the Big Five in their natural habitat while staying in luxury lodges.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 ease-in-out">
+                    <div class="p-6">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Family Holidays</h3>
+                        <p class="text-gray-600">
+                            Stress-free vacations designed for families. Kid-friendly resorts, activities for all ages, and special discounts for children.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 ease-in-out">
+                    <div class="p-6">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Honeymoon Packages</h3>
+                        <p class="text-gray-600">
+                            Romantic getaways to the world's most beautiful destinations. Private villas, couple's spa treatments, and unforgettable experiences.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 ease-in-out">
+                    <div class="p-6">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Visa & Ticketing Support</h3>
+                        <p class="text-gray-600">
+                            Comprehensive visa assistance and flight bookings. We handle all the paperwork so you can focus on your trip.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 ease-in-out">
+                    <div class="p-6">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Custom Group Tours</h3>
+                        <p class="text-gray-600">
+                            Tailored itineraries for groups of any size. Corporate retreats, school trips, or friend getaways - we create the perfect experience.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 ease-in-out">
+                    <div class="p-6">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Luxury Beach Escapes</h3>
+                        <p class="text-gray-600">
+                            Exclusive beach resorts with private access. Crystal clear waters, white sand beaches, and world-class service.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">Terms of Service</a>
-                <a href="#">Privacy Policy</a>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-6 focus:outline-none" onclick="toggleFAQ(1)">
+                        <span class="text-lg font-medium text-gray-800">How far in advance should I book my trip?</span>
+                        <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-300" id="faq-arrow-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-6 pb-6 hidden" id="faq-content-1">
+                        <p class="text-gray-600">
+                            We recommend booking at least 3-6 months in advance for international trips, especially during peak seasons. For last-minute bookings, we'll do our best to accommodate you, but options may be limited.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-6 focus:outline-none" onclick="toggleFAQ(2)">
+                        <span class="text-lg font-medium text-gray-800">What payment methods do you accept?</span>
+                        <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-300" id="faq-arrow-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-6 pb-6 hidden" id="faq-content-2">
+                        <p class="text-gray-600">
+                            We accept all major credit cards (Visa, MasterCard, American Express), bank transfers, and in some cases, PayPal. A deposit is typically required to secure your booking, with the balance due 60 days before departure.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-6 focus:outline-none" onclick="toggleFAQ(3)">
+                        <span class="text-lg font-medium text-gray-800">What if I need to change or cancel my trip?</span>
+                        <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-300" id="faq-arrow-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-6 pb-6 hidden" id="faq-content-3">
+                        <p class="text-gray-600">
+                            We understand plans change. Most changes can be accommodated with notice, though fees may apply depending on timing and supplier policies. We offer travel insurance options that cover cancellations for covered reasons.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-6 focus:outline-none" onclick="toggleFAQ(4)">
+                        <span class="text-lg font-medium text-gray-800">How does the trip planning process work?</span>
+                        <svg class="w-5 h-5 text-gray-600 transform transition-transform duration-300" id="faq-arrow-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-6 pb-6 hidden" id="faq-content-4">
+                        <p class="text-gray-600">
+                            Our process is simple: 1) Initial consultation to understand your needs, 2) We create a customized itinerary, 3) You review and request adjustments, 4) Finalize details and book, 5) We handle all logistics while you prepare for your adventure. We're with you every step of the way!
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="social-media">
-                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="images/whatsapp.png" alt="WhatsApp"></a>
-                <a href="#"><img src="images/twitter.png" alt="Twitter/X"></a>
-                <a href="#"><img src="images/tiktok.png" alt="TikTok"></a>
-                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contact Us</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Full Name</label>
+                            <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 focus:bg-white focus:text-gray-800 placeholder-blue-200">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                            <input type="email" id="email" class="contact-input w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 focus:bg-white focus:text-gray-800 placeholder-blue-200">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                            <input type="text" id="subject" class="contact-input w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 focus:bg-white focus:text-gray-800 placeholder-blue-200">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" rows="5" class="contact-input w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 focus:bg-white focus:text-gray-800 placeholder-blue-200"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-blue-700 p-8 rounded-xl h-full">
+                        <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-orange-400 text-xl mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-blue-200">info@amentravel.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-orange-400 text-xl mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <p class="text-blue-200">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-orange-400 text-xl mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Address</h4>
+                                    <p class="text-blue-200">123 Travel Street, Suite 100<br>New York, NY 10001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6">
+                                <h4 class="font-medium mb-4">Follow Us</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-white hover:text-orange-400 text-2xl"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" class="text-white hover:text-orange-400 text-2xl"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="text-white hover:text-orange-400 text-2xl"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="#" class="text-white hover:text-orange-400 text-2xl"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-white hover:text-orange-400 text-2xl"><i class="fab fa-tiktok"></i></a>
+                                    <a href="#" class="text-white hover:text-orange-400 text-2xl"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-blue-400">AmenTravel<span class="text-orange-400">&Tour</span></div>
+                    <p class="text-gray-400 mt-2">Making travel dreams come true since 2010.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Careers</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 AmenTravel&Tour. All rights reserved.</p>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // FAQ toggle function
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const arrow = document.getElementById(`faq-arrow-${id}`);
+            
+            content.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
